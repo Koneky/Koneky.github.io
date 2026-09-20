@@ -1,16 +1,107 @@
-# React + Vite
+# Qarumi Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal developer portfolio built with React + Vite and deployed with GitHub Pages.
 
-Currently, two official plugins are available:
+## Live
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://koneky.github.io/
 
-## React Compiler
+## About
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This portfolio showcases my personal, commercial and open-source projects.
 
-## Expanding the ESLint configuration
+Main areas:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Backend development with Python and Django
+- Frontend development with React
+- Mobile development with Flutter
+- APIs, databases and developer tools
+
+## Featured project
+
+### QRumiX
+
+My main pet project — a cross-platform QR application built with Flutter.
+
+Stack:
+
+- Flutter
+- Dart
+- Drift
+- SQLite
+- Dio
+- Provider
+
+## Commercial work
+
+Some commercial projects are presented in an anonymized form to avoid exposing client names and sensitive business details.
+
+Examples:
+
+- Product Configurator Platform
+- Legacy Business System Modernization
+
+## Open source & experiments
+
+Public projects available on GitHub include:
+
+- Django Debug Assistant
+- Voice Assistant
+- QR App Prototype
+
+## Tech stack
+
+- Python
+- Django
+- Django REST Framework
+- React
+- JavaScript
+- TypeScript
+- Flutter
+- Dart
+- PostgreSQL
+- MySQL
+- Redis
+- Docker
+- Git / GitHub
+
+## Features
+
+- Responsive design
+- RU / EN language switcher
+- Scroll animations
+- Active section navigation
+- Mobile navigation
+- SEO metadata
+- Open Graph preview
+- GitHub Pages deployment
+- Automatic deployment with GitHub Actions
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+Production build:
+
+```bash
+npm run build
+```
+
+Preview production build:
+
+```bash
+npm run preview
+```
+
+## Deployment
+
+The site is automatically deployed to GitHub Pages after every push to the `main` branch.
+
+## Author
+
+**Qarumi**
+
+GitHub: https://github.com/Koneky
