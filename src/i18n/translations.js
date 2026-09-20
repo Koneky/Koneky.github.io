@@ -83,6 +83,14 @@ export const translations = {
         },
       },
     },
+
+    contact: {
+      title: "Contact",
+      eyebrow: "Have an idea?",
+      heading: "Let’s build something useful.",
+      description:
+        "I am open to interesting development projects, collaboration and new technical challenges.",
+    },
   },
 
   ru: {
@@ -168,6 +176,14 @@ export const translations = {
             "Ранний прототип QR-приложения на Python и Kivy с локальной базой, темами, локализацией, профилями и несколькими экранами приложения.",
         },
       },
+    },
+
+    contact: {
+      title: "Контакты",
+      eyebrow: "Есть идея?",
+      heading: "Давайте создадим что-нибудь полезное.",
+      description:
+        "Я открыт к интересным проектам, сотрудничеству и новым техническим задачам.",
     },
   },
 };

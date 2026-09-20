@@ -7,7 +7,7 @@ function Header() {
     <header className="header">
       <div className="container header__inner">
         <a href="/" className="logo">
-          Koneky<span>.</span>
+          Qarumi<span>.</span>
         </a>
 
         <div className="header__right">

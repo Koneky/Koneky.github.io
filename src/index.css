@@ -774,6 +774,152 @@ a {
   color: var(--secondary);
 }
 
+/* Contact */
+
+.contact-section {
+  padding-bottom: 160px;
+}
+
+.contact {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.3fr)
+    minmax(320px, 0.7fr);
+
+  gap: 80px;
+
+  padding: 60px;
+
+  border: 1px solid var(--border);
+  border-radius: 26px;
+
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(124, 92, 255, 0.08),
+      transparent 35%
+    ),
+    rgba(255, 255, 255, 0.018);
+}
+
+.contact__eyebrow {
+  margin-bottom: 20px;
+
+  color: var(--secondary);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.contact__title {
+  max-width: 700px;
+
+  font-size: clamp(42px, 6vw, 72px);
+
+  line-height: 1;
+  letter-spacing: -3px;
+}
+
+.contact__description {
+  max-width: 600px;
+
+  margin-top: 28px;
+
+  color: var(--text-muted);
+
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.contact__links {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.contact-link {
+  padding: 20px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.02);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.contact-link:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(0, 217, 255, 0.25);
+
+  background:
+    rgba(0, 217, 255, 0.03);
+}
+
+.contact-link__label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-link__value {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.contact-link__arrow {
+  color: var(--secondary);
+
+  font-size: 18px;
+}
+
+/* Footer */
+
+.footer {
+  border-top: 1px solid var(--border);
+}
+
+.footer__inner {
+  min-height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: var(--text-muted);
+
+  font-size: 13px;
+}
+
+.footer__built {
+  font-family: monospace;
+}
+
 /* Background glow */
 
 .hero__glow {
@@ -875,6 +1021,27 @@ a {
 
   .project-card {
     min-height: 360px;
+  }
+
+  .contact {
+    grid-template-columns: 1fr;
+
+    gap: 48px;
+
+    padding: 32px 24px;
+  }
+
+  .contact__title {
+    letter-spacing: -2px;
+  }
+
+  .footer__inner {
+    padding: 24px 0;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 8px;
   }
 }
 
