@@ -4,7 +4,7 @@ function Contact() {
   const { t } = useLanguage()
 
   return (
-    <section className="section contact-section" id="contact">
+    <section className="section contact-section reveal" id="contact">
       <div className="container">
         <div className="section__heading">
           <span className="section__label">04</span>

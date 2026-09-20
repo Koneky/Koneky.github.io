@@ -4,7 +4,7 @@ function About() {
   const { t } = useLanguage()
 
   return (
-    <section className="section" id="about">
+    <section className="section reveal" id="about">
       <div className="container">
         <div className="section__heading">
           <span className="section__label">01</span>

@@ -43,7 +43,7 @@ function TechStack() {
   const { t } = useLanguage()
 
   return (
-    <section className="section" id="stack">
+    <section className="section reveal" id="stack">
       <div className="container">
         <div className="section__heading">
           <span className="section__label">02</span>
