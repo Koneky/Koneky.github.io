@@ -403,3 +403,163 @@ main,
     display: none;
   }
 }
+
+/* Autumn */
+
+.autumn-leaf {
+  position: absolute;
+
+  top: -60px;
+  left: var(--leaf-left);
+
+  width: var(--leaf-size);
+  height:
+    calc(
+      var(--leaf-size) * 1.35
+    );
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 220, 150, 0.35),
+      var(--leaf-tone) 48%,
+      rgba(80, 30, 35, 0.9)
+    );
+
+  opacity:
+    var(--leaf-opacity);
+
+  clip-path:
+    polygon(
+      50% 0%,
+      68% 18%,
+      94% 28%,
+      76% 48%,
+      100% 63%,
+      68% 70%,
+      55% 100%,
+      42% 74%,
+      10% 82%,
+      28% 56%,
+      0% 43%,
+      33% 30%
+    );
+
+  filter:
+    drop-shadow(
+      0 0 5px
+      rgba(220, 110, 50, 0.16)
+    );
+
+  transform-origin:
+    50% 40%;
+
+  animation:
+    autumnLeafFall
+    var(--leaf-duration)
+    ease-in-out
+    var(--leaf-delay)
+    infinite;
+
+  will-change:
+    transform;
+}
+
+.autumn-leaf__vein {
+  position: absolute;
+
+  left: 50%;
+  top: 18%;
+
+  width: 1px;
+  height: 62%;
+
+  background:
+    rgba(255, 225, 180, 0.28);
+
+  transform:
+    rotate(4deg);
+
+  transform-origin:
+    top;
+}
+
+@keyframes autumnLeafFall {
+  0% {
+    transform:
+      translate3d(
+        0,
+        -10vh,
+        0
+      )
+      rotate(
+        var(--leaf-rotation)
+      );
+  }
+
+  22% {
+    transform:
+      translate3d(
+        var(--leaf-sway),
+        24vh,
+        0
+      )
+      rotate(
+        calc(
+          var(--leaf-rotation) + 110deg
+        )
+      );
+  }
+
+  48% {
+    transform:
+      translate3d(
+        calc(
+          var(--leaf-drift) * -0.45
+        ),
+        56vh,
+        0
+      )
+      rotate(
+        calc(
+          var(--leaf-rotation) + 220deg
+        )
+      );
+  }
+
+  72% {
+    transform:
+      translate3d(
+        var(--leaf-drift),
+        88vh,
+        0
+      )
+      rotate(
+        calc(
+          var(--leaf-rotation) + 330deg
+        )
+      );
+  }
+
+  100% {
+    transform:
+      translate3d(
+        calc(
+          var(--leaf-sway) * -0.8
+        ),
+        125vh,
+        0
+      )
+      rotate(
+        calc(
+          var(--leaf-rotation) + 470deg
+        )
+      );
+  }
+}
+
+@media (max-width: 768px) {
+  .autumn-leaf--mobile-hidden {
+    display: none;
+  }
+}
