@@ -248,3 +248,158 @@ main,
     display: none;
   }
 }
+
+/* Summer */
+
+.summer-firefly {
+  position: absolute;
+
+  left: var(--firefly-left);
+  top: var(--firefly-top);
+
+  width: var(--firefly-size);
+  height: var(--firefly-size);
+
+  animation:
+    summerFireflyWander
+    var(--firefly-duration)
+    ease-in-out
+    var(--firefly-delay)
+    infinite alternate;
+
+  will-change: transform;
+}
+
+.summer-firefly__glow {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  background:
+    var(--firefly-tone);
+
+  opacity:
+    var(--firefly-opacity);
+
+  box-shadow:
+    0 0
+    calc(
+      var(--firefly-glow) * 0.35
+    )
+    var(--firefly-tone),
+
+    0 0
+    var(--firefly-glow)
+    var(--firefly-tone),
+
+    0 0
+    calc(
+      var(--firefly-glow) * 1.8
+    )
+    color-mix(
+      in srgb,
+      var(--firefly-tone) 35%,
+      transparent
+    );
+
+  animation:
+    summerFireflyPulse
+    var(--firefly-pulse-duration)
+    ease-in-out
+    var(--firefly-pulse-delay)
+    infinite;
+
+  will-change:
+    opacity,
+    transform;
+}
+
+@keyframes summerFireflyWander {
+  0% {
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      );
+  }
+
+  33% {
+    transform:
+      translate3d(
+        var(--firefly-x1),
+        var(--firefly-y1),
+        0
+      );
+  }
+
+  66% {
+    transform:
+      translate3d(
+        var(--firefly-x2),
+        var(--firefly-y2),
+        0
+      );
+  }
+
+  100% {
+    transform:
+      translate3d(
+        calc(
+          var(--firefly-x1) * -0.45
+        ),
+        calc(
+          var(--firefly-y2) * 0.7
+        ),
+        0
+      );
+  }
+}
+
+@keyframes summerFireflyPulse {
+  0%,
+  100% {
+    opacity:
+      calc(
+        var(--firefly-opacity) * 0.28
+      );
+
+    transform:
+      scale(0.75);
+  }
+
+  35% {
+    opacity:
+      var(--firefly-opacity);
+
+    transform:
+      scale(1.15);
+  }
+
+  55% {
+    opacity:
+      calc(
+        var(--firefly-opacity) * 0.55
+      );
+
+    transform:
+      scale(0.9);
+  }
+
+  72% {
+    opacity:
+      var(--firefly-opacity);
+
+    transform:
+      scale(1.05);
+  }
+}
+
+@media (max-width: 768px) {
+  .summer-firefly--mobile-hidden {
+    display: none;
+  }
+}
