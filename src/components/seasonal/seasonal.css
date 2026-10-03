@@ -563,3 +563,177 @@ main,
     display: none;
   }
 }
+
+/* Winter */
+
+.winter-snowflake {
+  position: absolute;
+
+  top: -30px;
+  left: var(--snow-left);
+
+  width: var(--snow-size);
+  height: var(--snow-size);
+
+  opacity:
+    var(--snow-opacity);
+
+  filter:
+    blur(
+      var(--snow-blur)
+    )
+    drop-shadow(
+      0 0 5px
+      rgba(210, 240, 255, 0.3)
+    );
+
+  animation:
+    winterSnowFall
+    var(--snow-duration)
+    linear
+    var(--snow-delay)
+    infinite;
+
+  will-change:
+    transform;
+}
+
+.winter-snowflake--dot {
+  border-radius: 50%;
+
+  background:
+    var(--snow-tone);
+}
+
+.winter-snowflake--crystal,
+.winter-snowflake--flake {
+  background: transparent;
+}
+
+.winter-snowflake__crystal {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 100%;
+  height: 100%;
+
+  transform:
+    translate(-50%, -50%);
+
+  filter:
+    drop-shadow(
+      0 0 4px
+      rgba(220, 245, 255, 0.45)
+    );
+}
+
+.winter-snowflake__arm {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  width: 1px;
+  height: 100%;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      var(--snow-tone) 18%,
+      var(--snow-tone) 82%,
+      transparent
+    );
+
+  transform-origin:
+    center;
+}
+
+.winter-snowflake__arm--1 {
+  transform:
+    translateX(-50%)
+    rotate(0deg);
+}
+
+.winter-snowflake__arm--2 {
+  transform:
+    translateX(-50%)
+    rotate(60deg);
+}
+
+.winter-snowflake__arm--3 {
+  transform:
+    translateX(-50%)
+    rotate(120deg);
+}
+
+.winter-snowflake--crystal
+.winter-snowflake__crystal {
+  opacity: 0.7;
+}
+
+.winter-snowflake--flake
+.winter-snowflake__arm {
+  width: 1.2px;
+}
+
+@keyframes winterSnowFall {
+  0% {
+    transform:
+      translate3d(
+        0,
+        -8vh,
+        0
+      );
+  }
+
+  25% {
+    transform:
+      translate3d(
+        var(--snow-sway),
+        28vh,
+        0
+      );
+  }
+
+  50% {
+    transform:
+      translate3d(
+        calc(
+          var(--snow-drift) * 0.4
+        ),
+        60vh,
+        0
+      );
+  }
+
+  75% {
+    transform:
+      translate3d(
+        calc(
+          var(--snow-sway) * -0.8
+        ),
+        92vh,
+        0
+      );
+  }
+
+  100% {
+    transform:
+      translate3d(
+        var(--snow-drift),
+        125vh,
+        0
+      );
+  }
+}
+
+@media (max-width: 768px) {
+  .winter-snowflake--mobile-hidden {
+    display: none;
+  }
+}
