@@ -5,6 +5,7 @@ import TechStack from './components/TechStack'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import SeasonalBackground from './components/seasonal/SeasonalBackground';
 
 import { useScrollReveal } from './hooks/useScrollReveal'
 
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <>
+      <SeasonalBackground />
       <Header />
 
       <main>

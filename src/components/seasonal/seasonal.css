@@ -1,0 +1,83 @@
+:root {
+  --parallax-far-x: 0px;
+  --parallax-far-y: 0px;
+
+  --parallax-mid-x: 0px;
+  --parallax-mid-y: 0px;
+
+  --parallax-near-x: 0px;
+  --parallax-near-y: 0px;
+}
+
+#root {
+  position: relative;
+  isolation: isolate;
+}
+
+.seasonal-background {
+  position: fixed;
+  inset: 0;
+
+  z-index: -1;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  animation:
+    seasonalFadeIn 0.8s ease forwards;
+}
+
+.seasonal-layer {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  will-change: transform;
+}
+
+.seasonal-layer--far {
+  transform:
+    translate3d(
+      var(--parallax-far-x),
+      var(--parallax-far-y),
+      0
+    );
+}
+
+.seasonal-layer--mid {
+  transform:
+    translate3d(
+      var(--parallax-mid-x),
+      var(--parallax-mid-y),
+      0
+    );
+}
+
+.seasonal-layer--near {
+  transform:
+    translate3d(
+      var(--parallax-near-x),
+      var(--parallax-near-y),
+      0
+    );
+}
+
+main,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes seasonalFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
