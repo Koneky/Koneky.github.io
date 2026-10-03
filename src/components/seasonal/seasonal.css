@@ -737,3 +737,26 @@ main,
     display: none;
   }
 }
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .seasonal-background {
+    opacity: 0.65;
+    animation: none;
+  }
+
+  .seasonal-layer {
+    transform: none !important;
+    will-change: auto;
+  }
+
+  .spring-petal,
+  .summer-firefly,
+  .summer-firefly__glow,
+  .autumn-leaf,
+  .winter-snowflake {
+    animation-play-state: paused !important;
+    will-change: auto;
+  }
+}
