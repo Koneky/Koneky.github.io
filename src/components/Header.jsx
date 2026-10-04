@@ -1,5 +1,12 @@
 import { useEffect, useState } from 'react'
+import {
+  Link,
+  useLocation,
+} from 'react-router-dom'
+
 import { useLanguage } from '../context/useLanguage'
+import { routePaths } from '../router/routeConfig'
+import { getHomeSectionTarget } from '../utils/navigation'
 
 const sections = [
   'about',
@@ -10,11 +17,16 @@ const sections = [
 
 function Header() {
   const { language, setLanguage, t } = useLanguage()
+  const location = useLocation()
 
   const [activeSection, setActiveSection] = useState('')
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
+    if (location.pathname !== routePaths.home) {
+      return
+    }
+
     const handleScroll = () => {
       const scrollY = window.scrollY
       const viewportHeight = window.innerHeight
@@ -76,7 +88,7 @@ function Header() {
         handleScroll,
       )
     }
-  }, [])
+  }, [location.pathname])
 
   useEffect(() => {
     document.body.style.overflow = menuOpen
@@ -98,7 +110,11 @@ function Header() {
   }
 
   const getLinkClass = (section) => {
-    return activeSection === section
+    const isActive =
+      location.pathname === routePaths.home &&
+      activeSection === section
+
+    return isActive
       ? 'nav__link active'
       : 'nav__link'
   }
@@ -106,13 +122,13 @@ function Header() {
   return (
     <header className="header">
       <div className="container header__inner">
-        <a
-          href="#"
+        <Link
+          to={routePaths.home}
           className="logo"
           onClick={() => setMenuOpen(false)}
         >
           Qarumi<span>.</span>
-        </a>
+        </Link>
 
         <div className="header__right">
           <nav
@@ -122,37 +138,37 @@ function Header() {
                 : 'nav'
             }
           >
-            <a
-              href="#about"
+            <Link
+              to={getHomeSectionTarget('about')}
               className={getLinkClass('about')}
               onClick={handleNavigation}
             >
               {t.nav.about}
-            </a>
+            </Link>
 
-            <a
-              href="#stack"
+            <Link
+              to={getHomeSectionTarget('stack')}
               className={getLinkClass('stack')}
               onClick={handleNavigation}
             >
               {t.nav.stack}
-            </a>
+            </Link>
 
-            <a
-              href="#projects"
+            <Link
+              to={getHomeSectionTarget('projects')}
               className={getLinkClass('projects')}
               onClick={handleNavigation}
             >
               {t.nav.projects}
-            </a>
+            </Link>
 
-            <a
-              href="#contact"
+            <Link
+              to={getHomeSectionTarget('contact')}
               className={getLinkClass('contact')}
               onClick={handleNavigation}
             >
               {t.nav.contact}
-            </a>
+            </Link>
 
             <div className="nav__mobile-language">
               <button
