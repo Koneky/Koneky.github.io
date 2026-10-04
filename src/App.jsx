@@ -1,33 +1,20 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import TechStack from './components/TechStack'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import SeasonalBackground from './components/seasonal/SeasonalBackground';
+import { Route, Routes } from "react-router-dom";
 
-import { useScrollReveal } from './hooks/useScrollReveal'
+import SiteLayout from "./layouts/SiteLayout";
+import HomePage from "./pages/HomePage";
+import NotPoundPage from "./pages/NotFoundPage";
+import { routePaths } from "./router/routeConfig";
 
 function App() {
-  useScrollReveal()
-
   return (
-    <>
-      <SeasonalBackground />
-      <Header />
+    <Routes>
+      <Route element={<SiteLayout />}>
+        <Route path={routePaths.home} element={<HomePage />} />
 
-      <main>
-        <Hero />
-        <About />
-        <TechStack />
-        <Projects />
-        <Contact />
-      </main>
-
-      <Footer />
-    </>
-  )
+        <Route path="*" element={<NotPoundPage />} />
+      </Route>
+    </Routes>
+  );
 }
 
-export default App
+export default App;

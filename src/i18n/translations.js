@@ -91,6 +91,13 @@ export const translations = {
       description:
         "I am open to interesting development projects, collaboration and new technical challenges.",
     },
+
+    notFound: {
+      title: "Page not found",
+      description: "The page you are looking for does not exist.",
+      home: "Home",
+      projects: "Projects",
+    },
   },
 
   ru: {
@@ -184,6 +191,13 @@ export const translations = {
       heading: "Давайте создадим что-нибудь полезное.",
       description:
         "Я открыт к интересным проектам, сотрудничеству и новым техническим задачам.",
+    },
+
+    notFound: {
+      title: "Страница не найдена",
+      description: "Страница, которую вы ищете, не существует.",
+      home: "На главную",
+      projects: "Проекты",
     },
   },
 };
