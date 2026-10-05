@@ -1,51 +1,103 @@
-export const featuredProjects = [
+export const projects = [
   {
     id: "qrumix",
     title: "QRumiX",
-    stack: ["Flutter", "Dart", "Drift", "SQLite", "Dio", "Provider"],
+    type: "featured",
+    technologies: [
+      "flutter",
+      "dart",
+      "drift",
+      "sqlite",
+      "dio",
+      "provider",
+    ],
     repository: null,
     isPrivate: true,
   },
-];
 
-export const commercialProjects = [
   {
     id: "productConfigurator",
     title: "Product Configurator Platform",
-    stack: ["Python", "Django", "DRF", "React", "MySQL", "Redis"],
+    type: "commercial",
+    technologies: [
+      "python",
+      "django",
+      "django-rest-framework",
+      "react",
+      "mysql",
+      "redis",
+    ],
+    repository: null,
+    isPrivate: true,
   },
   {
     id: "legacyModernization",
     title: "Legacy Business System Modernization",
-    stack: [
-      "Python",
-      "Django",
-      "React",
-      "TypeScript",
-      "PostgreSQL",
-      "Redis",
-      "Docker",
+    type: "commercial",
+    technologies: [
+      "python",
+      "django",
+      "react",
+      "typescript",
+      "postgresql",
+      "redis",
+      "docker",
     ],
+    repository: null,
+    isPrivate: true,
   },
-];
 
-export const openSourceProjects = [
   {
     id: "djangoDebugAssistant",
     title: "Django Debug Assistant",
-    stack: ["Python", "Tkinter", "GitPython"],
+    type: "open-source",
+    technologies: [
+      "python",
+      "tkinter",
+      "gitpython",
+    ],
     repository: "https://github.com/Koneky/Django-Debug-Assistant",
+    isPrivate: false,
   },
   {
     id: "voiceAssistant",
     title: "Voice Assistant",
-    stack: ["Python", "PyTorch", "Coqui TTS", "SpeechRecognition"],
+    type: "open-source",
+    technologies: [
+      "python",
+      "pytorch",
+      "coqui-tts",
+      "speechrecognition",
+    ],
     repository: "https://github.com/Koneky/voice_assistant",
+    isPrivate: false,
   },
   {
     id: "qrAppPrototype",
     title: "QR App Prototype",
-    stack: ["Python", "Kivy", "KivyMD", "Peewee"],
+    type: "open-source",
+    technologies: [
+      "python",
+      "kivy",
+      "kivymd",
+      "peewee",
+    ],
     repository: "https://github.com/Koneky/qr_app",
+    isPrivate: false,
   },
 ];
+
+export function getProjectById(id) {
+  return projects.find((project) => project.id === id) ?? null;
+}
+
+export function getProjectsByType(type) {
+  return projects.filter((project) => project.type === type);
+}
+
+// Temporary compatibility exports for the current Projects UI.
+// They are derived from the canonical projects array, so project data
+// still has a single source of truth.
+export const featuredProjects = getProjectsByType("featured");
+export const commercialProjects = getProjectsByType("commercial");
+export const openSourceProjects = getProjectsByType("open-source");

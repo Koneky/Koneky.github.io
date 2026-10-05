@@ -1,30 +1,37 @@
-import { useLanguage } from '../context/useLanguage'
+import { useLanguage } from "../context/useLanguage";
 
 import {
-  featuredProjects,
-  commercialProjects,
-  openSourceProjects,
-} from '../data/projects'
+  getProjectsByType,
+} from "../data/projects";
+import { getTechnology } from "../data/technologies";
 
-function ProjectStack({ stack }) {
+function ProjectStack({ technologies }) {
   return (
     <div className="project-stack">
-      {stack.map((technology) => (
-        <span
-          className="project-stack__item"
-          key={technology}
-        >
-          {technology}
-        </span>
-      ))}
+      {technologies.map((technologyId) => {
+        const technology = getTechnology(technologyId)
+
+        return (
+          <span
+            className="project-stack__item"
+            key={technologyId}
+          >
+            {technology?.label ?? technologyId}
+          </span>
+        );
+      })}
     </div>
-  )
+  );
 }
 
 function Projects() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
-  const featured = featuredProjects[0]
+  const featuredProjects = getProjectsByType('featured');
+  const commercialProjects = getProjectsByType('commercial');
+  const openSourceProjects = getProjectsByType('open-source');
+
+  const featured = featuredProjects[0];
 
   return (
     <section
@@ -73,7 +80,7 @@ function Projects() {
             </div>
 
             <div className="featured-project__footer">
-              <ProjectStack stack={featured.stack} />
+              <ProjectStack technologies={featured.technologies} />
 
               <span className="project-private">
                 {t.projects.privateRepository}
@@ -118,7 +125,7 @@ function Projects() {
                 </p>
 
                 <div className="project-card__footer">
-                  <ProjectStack stack={project.stack} />
+                  <ProjectStack technologies={project.technologies} />
 
                   <span className="project-private">
                     {t.projects.privateRepository}
@@ -157,7 +164,7 @@ function Projects() {
                 </div>
 
                 <div className="opensource-card__bottom">
-                  <ProjectStack stack={project.stack} />
+                  <ProjectStack technologies={project.technologies} />
 
                   <a
                     href={project.repository}
@@ -175,7 +182,7 @@ function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Projects
+export default Projects;

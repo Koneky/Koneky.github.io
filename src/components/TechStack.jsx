@@ -1,43 +1,8 @@
 import { useLanguage } from '../context/useLanguage'
-
-const stackGroups = [
-  {
-    key: 'backend',
-    technologies: [
-      'Python',
-      'Django',
-      'Django REST Framework',
-      'FastAPI',
-    ],
-  },
-  {
-    key: 'frontend',
-    technologies: [
-      'React',
-      'JavaScript',
-      'HTML',
-      'CSS',
-      'Vite',
-    ],
-  },
-  {
-    key: 'mobile',
-    technologies: [
-      'Flutter',
-      'Dart',
-    ],
-  },
-  {
-    key: 'tools',
-    technologies: [
-      'Git',
-      'GitHub',
-      'Docker',
-      'PostgreSQL',
-      'Linux',
-    ],
-  },
-]
+import {
+  technologyGroups,
+  getTechnology,
+} from '../data/technologies'
 
 function TechStack() {
   const { t } = useLanguage()
@@ -53,7 +18,7 @@ function TechStack() {
         </div>
 
         <div className="stack-grid">
-          {stackGroups.map((group) => (
+          {technologyGroups.map((group) => (
             <article
               className="stack-card"
               key={group.key}
@@ -63,14 +28,18 @@ function TechStack() {
               </p>
 
               <div className="stack-card__items">
-                {group.technologies.map((technology) => (
-                  <span
-                    className="stack-card__item"
-                    key={technology}
-                  >
-                    {technology}
-                  </span>
-                ))}
+                {group.technologies.map((technologyId) => {
+                  const technology = getTechnology(technologyId)
+
+                  return (
+                    <span
+                      className="stack-card__item"
+                      key={technologyId}
+                    >
+                      {technology?.label ?? technologyId}
+                    </span>
+                  )
+                })}
               </div>
             </article>
           ))}
