@@ -90,6 +90,20 @@ export const translations = {
       heading: "Let’s build something useful.",
       description:
         "I am open to interesting development projects, collaboration and new technical challenges.",
+
+      copy: "Copy",
+      copied: "Copied",
+      copyEmail: "Copy email",
+
+      links: {
+        github: "GitHub",
+        telegram: "Telegram",
+        "telegram-channel": "Telegram Channel",
+        vk: "VK",
+        "vk-channel": "VK Channel",
+        instagram: "Instagram",
+        email: "Email",
+      },
     },
 
     notFound: {
@@ -191,6 +205,20 @@ export const translations = {
       heading: "Давайте создадим что-нибудь полезное.",
       description:
         "Я открыт к интересным проектам, сотрудничеству и новым техническим задачам.",
+
+      copy: "Копировать",
+      copied: "Скопировано",
+      copyEmail: "Скопировать email",
+
+      links: {
+        github: "GitHub",
+        telegram: "Telegram",
+        "telegram-channel": "Telegram-канал",
+        vk: "VK",
+        "vk-channel": "VK-канал",
+        instagram: "Instagram",
+        email: "Email",
+      },
     },
 
     notFound: {
