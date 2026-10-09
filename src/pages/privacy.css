@@ -1,0 +1,166 @@
+.privacy-page {
+  position: relative;
+  z-index: 1;
+
+  min-height: 100vh;
+
+  padding: 150px 0 90px;
+}
+
+.privacy-page__inner {
+  max-width: 860px;
+}
+
+.privacy-page__header {
+  margin-bottom: 48px;
+}
+
+.privacy-page__eyebrow {
+  margin: 0 0 12px;
+
+  color: var(--secondary);
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.privacy-page__title {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1.05;
+}
+
+.privacy-page__intro {
+  max-width: 720px;
+
+  margin: 22px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.privacy-page__content {
+  display: grid;
+
+  gap: 16px;
+}
+
+.privacy-page__section {
+  padding: 24px;
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+.privacy-page__section h2 {
+  margin: 0 0 10px;
+
+  color: var(--text);
+
+  font-size: 20px;
+}
+
+.privacy-page__section p {
+  margin: 0;
+
+  color: var(--text-muted);
+
+  line-height: 1.7;
+}
+
+.privacy-page__code {
+  display: inline-block;
+
+  margin-top: 14px;
+  padding: 7px 10px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background:
+    rgba(0, 217, 255, 0.04);
+
+  color: var(--secondary);
+
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.privacy-page__button {
+  margin-top: 18px;
+  min-height: 44px;
+
+  padding: 0 18px;
+
+  border: 1px solid var(--secondary);
+  border-radius: 10px;
+
+  background:
+    rgba(0, 217, 255, 0.06);
+
+  color: var(--secondary);
+
+  cursor: pointer;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.privacy-page__button:hover,
+.privacy-page__button:focus-visible {
+  background:
+    rgba(0, 217, 255, 0.12);
+}
+
+.privacy-page__button:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+.privacy-page__back {
+  display: inline-flex;
+
+  margin-top: 28px;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    color 0.2s ease;
+}
+
+.privacy-page__back:hover,
+.privacy-page__back:focus-visible {
+  color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .privacy-page {
+    padding: 120px 0 64px;
+  }
+
+  .privacy-page__header {
+    margin-bottom: 32px;
+  }
+
+  .privacy-page__section {
+    padding: 18px;
+  }
+}

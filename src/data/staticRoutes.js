@@ -1,4 +1,11 @@
-export const staticRoutes = [];
+export const staticRoutes = [
+  {
+    path: "/privacy",
+    title: "Privacy | Qarumi",
+    description: "Privacy information and analytics preferences for thr Qarumi portfolio.",
+    robots: "index,follow",
+  },
+];
 
 export function validateStaticRoutes(routes) {
   const paths = new Set();

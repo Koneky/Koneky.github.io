@@ -6,8 +6,14 @@ import {
   validateStaticRoutes,
 } from "../src/data/staticRoutes.js";
 
-test("initial static route registry is valid", () => {
-  assert.deepEqual(staticRoutes, []);
+test("static route registry includes the privacy page", () => {
+  const privacyRoute = staticRoutes.find((route) => route.path === "/privacy");
+
+  assert.ok(privacyRoute);
+
+  assert.equal(typeof privacyRoute.title, "string");
+  assert.equal(typeof privacyRoute.description, "string");
+  assert.equal(privacyRoute.robots, "index,follow");
 
   assert.doesNotThrow(() => {
     validateStaticRoutes(staticRoutes);

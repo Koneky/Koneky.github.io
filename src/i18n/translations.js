@@ -112,6 +112,68 @@ export const translations = {
       home: "Home",
       projects: "Projects",
     },
+
+    consent: {
+      bannerLabel: "Cookie preferences",
+      title: "Privacy preferences",
+      description:
+        "This site uses optional analytics to understand how it is used. You can accept all optional analytics, reject them, or choose your preferences.",
+      acceptAll: "Accept all",
+      rejectOptional: "Reject optional",
+      settings: "Settings",
+
+      preferencesEyebrow: "Privacy controls",
+      preferencesTitle: "Cookie preferences",
+      preferencesDescription:
+        "Necessary functionality is always available. Optional analytics are enabled only when you allow them.",
+
+      necessaryTitle: "Necessary",
+      necessaryDescription:
+        "Required for essential site functionality and your privacy preference.",
+
+      analyticsTitle: "Analytics",
+      analyticsDescription:
+        "Helps understand page usage and general traffic patterns.",
+
+      behaviorTitle: "Behavior analytics",
+      behaviorDescription:
+        "Allows enhanced behavior analytics such as session interaction features. Requires Analytics.",
+
+      save: "Save preferences",
+      cancel: "Cancel",
+      close: "Close cookie preferences",
+    },
+
+    privacy: {
+      eyebrow: "Privacy",
+      title: "Privacy & analytics",
+      intro:
+        "This page explains what privacy-related data the portfolio stores and how optional analytics preferences are controlled.",
+
+      necessaryTitle: "Necessary storage",
+      necessaryDescription:
+        "The site stores your privacy preference locally in your browser so that your choice can be remembered. This preference is required for the consent system to work.",
+
+      analyticsTitle: "Optional analytics",
+      analyticsDescription:
+        "Analytics are disabled by default and are only allowed after you give consent. Analytics integrations are added separately and must respect this preference.",
+
+      behaviorTitle: "Behavior analytics",
+      behaviorDescription:
+        "Enhanced behavior analytics is optional and can only be enabled when Analytics is also enabled. Disabling Analytics automatically disables behavior analytics.",
+
+      controlTitle: "Your choices",
+      controlDescription:
+        "You can change your optional analytics preferences at any time. Necessary functionality remains available regardless of your choice.",
+
+      managePreferences: "Manage cookie preferences",
+      backHome: "Back to home",
+    },
+
+    footer: {
+      privacy: "Privacy",
+      cookieSettings: "Cookie settings",
+    },
   },
 
   ru: {
@@ -226,6 +288,68 @@ export const translations = {
       description: "Страница, которую вы ищете, не существует.",
       home: "На главную",
       projects: "Проекты",
+    },
+
+    consent: {
+      bannerLabel: "Настройки cookie",
+      title: "Настройки приватности",
+      description:
+        "Сайт использует необязательную аналитику, чтобы понимать, как им пользуются. Вы можете разрешить всю необязательную аналитику, отклонить её или выбрать настройки.",
+      acceptAll: "Принять всё",
+      rejectOptional: "Отклонить необязательное",
+      settings: "Настройки",
+
+      preferencesEyebrow: "Управление приватностью",
+      preferencesTitle: "Настройки cookie",
+      preferencesDescription:
+        "Необходимая функциональность доступна всегда. Необязательная аналитика включается только с вашего разрешения.",
+
+      necessaryTitle: "Необходимые",
+      necessaryDescription:
+        "Нужны для основной работы сайта и сохранения выбранных настроек приватности.",
+
+      analyticsTitle: "Аналитика",
+      analyticsDescription:
+        "Помогает понимать использование страниц и общие показатели посещаемости.",
+
+      behaviorTitle: "Поведенческая аналитика",
+      behaviorDescription:
+        "Разрешает расширенную аналитику взаимодействия с сайтом. Требует включённой Аналитики.",
+
+      save: "Сохранить настройки",
+      cancel: "Отмена",
+      close: "Закрыть настройки cookie",
+    },
+
+    privacy: {
+      eyebrow: "Приватность",
+      title: "Приватность и аналитика",
+      intro:
+        "На этой странице описано, какие данные, связанные с приватностью, хранит портфолио и как управляются настройки необязательной аналитики.",
+
+      necessaryTitle: "Необходимое хранение",
+      necessaryDescription:
+        "Сайт локально сохраняет в браузере выбранные настройки приватности, чтобы помнить ваше решение. Эта запись необходима для работы системы согласия.",
+
+      analyticsTitle: "Необязательная аналитика",
+      analyticsDescription:
+        "Аналитика по умолчанию отключена и разрешается только после вашего согласия. Аналитические интеграции подключаются отдельно и должны учитывать этот выбор.",
+
+      behaviorTitle: "Поведенческая аналитика",
+      behaviorDescription:
+        "Расширенная поведенческая аналитика является необязательной и может быть включена только вместе с Аналитикой. При отключении Аналитики поведенческая аналитика также отключается.",
+
+      controlTitle: "Ваш выбор",
+      controlDescription:
+        "Вы можете изменить настройки необязательной аналитики в любое время. Необходимая функциональность сайта остаётся доступной независимо от выбранных настроек.",
+
+      managePreferences: "Управлять настройками cookie",
+      backHome: "Вернуться на главную",
+    },
+
+    footer: {
+      privacy: "Приватность",
+      cookieSettings: "Настройки cookie",
     },
   },
 };
