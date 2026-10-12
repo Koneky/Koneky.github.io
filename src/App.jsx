@@ -5,18 +5,23 @@ import HomePage from "./pages/HomePage";
 import NotPoundPage from "./pages/NotFoundPage";
 import { routePaths } from "./router/routeConfig";
 import PrivacyPage from "./pages/PrivacyPage";
+import AnalyticsManager from "./analytics/AnalyticsManager";
 
 function App() {
   return (
-    <Routes>
-      <Route element={<SiteLayout />}>
-        <Route path={routePaths.home} element={<HomePage />} />
+    <>
+      <AnalyticsManager />
 
-        <Route path={routePaths.privacy} element={<PrivacyPage />} />
+      <Routes>
+        <Route element={<SiteLayout />}>
+          <Route path={routePaths.home} element={<HomePage />} />
 
-        <Route path="*" element={<NotPoundPage />} />
-      </Route>
-    </Routes>
+          <Route path={routePaths.privacy} element={<PrivacyPage />} />
+
+          <Route path="*" element={<NotPoundPage />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 
