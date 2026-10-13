@@ -7,6 +7,23 @@ export const translations = {
       contact: "Contact",
     },
 
+    open: "Open quick actions",
+
+    commandPalette: {
+      title: "Quick actions",
+      placeholder: "Search commands...",
+      close: "Close command palette",
+      empty: "No matching commands",
+      commands: {
+        about: "About",
+        projects: "Projects",
+        github: "GitHub",
+        contact: "Contact",
+        "language-ru": "Switch to Russian",
+        "language-en": "Switch to English",
+      },
+    },
+
     hero: {
       role: "Backend / Fullstack Developer",
       titleStart: "Hi, I'm",
@@ -182,6 +199,23 @@ export const translations = {
       stack: "Стек",
       projects: "Проекты",
       contact: "Контакты",
+    },
+
+    open: "Открыть быстрые действия",
+
+    commandPalette: {
+      title: "Быстрые действия",
+      placeholder: "Поиск команд...",
+      close: "Закрыть палитру команд",
+      empty: "Команды не найдены",
+      commands: {
+        about: "Обо мне",
+        projects: "Проекты",
+        github: "GitHub",
+        contact: "Контакты",
+        "language-ru": "Переключить на русский",
+        "language-en": "Переключить на английский",
+      },
     },
 
     hero: {

@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom'
 
 import { useLanguage } from '../context/useLanguage'
+import { useCommandUI } from '../context/useCommandUI'
 import { routePaths } from '../router/routeConfig'
 import { getHomeSectionTarget } from '../utils/navigation'
 
@@ -17,6 +18,7 @@ const sections = [
 
 function Header() {
   const { language, setLanguage, t } = useLanguage()
+  const { openPalette } = useCommandUI()
   const location = useLocation()
 
   const [activeSection, setActiveSection] = useState('')
@@ -196,6 +198,42 @@ function Header() {
               </button>
             </div>
           </nav>
+
+          <button
+            type="button"
+            className="header__command-trigger"
+            onClick={() => {
+              setMenuOpen(false)
+              openPalette()
+            }}
+            aria-label={t.commandPalette.open}
+            aria-haspopup="dialog"
+          >
+
+            <svg
+              className="header__command-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-4-4" />
+            </svg>
+
+            <span
+              className="header__command-shortcut"
+              aria-hidden="true"
+            >
+              Ctrl / ⌘ + K
+            </span>
+          </button>
 
           <div className="language-switcher">
             <button
