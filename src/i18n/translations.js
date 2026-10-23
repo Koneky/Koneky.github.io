@@ -57,6 +57,11 @@ export const translations = {
       title: "Projects",
       subtitle: "Selected work",
 
+      filteredBy: "Filtered by",
+      resultsCount: "Projects found",
+      clearFilter: "Clear",
+      noResults: "No projects found for this technology.",
+
       featuredLabel: "Featured pet project",
       commercialTitle: "Commercial work",
       commercialDescription:
@@ -250,6 +255,11 @@ export const translations = {
     projects: {
       title: "Проекты",
       subtitle: "Избранные работы",
+
+      filteredBy: "Фильтр",
+      resultsCount: "Найдено проектов",
+      clearFilter: "Сбросить",
+      noResults: "Для выбранной технологии проекты не найдены.",
 
       featuredLabel: "Главный pet-проект",
       commercialTitle: "Коммерческие проекты",
