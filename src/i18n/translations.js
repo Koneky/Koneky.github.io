@@ -196,6 +196,23 @@ export const translations = {
       privacy: "Privacy",
       cookieSettings: "Cookie settings",
     },
+
+    caseStudy: {
+      eyebrow: "Project Case Study",
+      backToProjects: "Back to Projects",
+      stackTitle: "Project technologies",
+      cta: "Case Study",
+
+      sections: {
+        role: "Role & Contribution",
+        challenge: "The Challenge",
+        solution: "The Solution",
+        architecture: "Architecture & Technical Decisions",
+        gallery: "Gallery",
+        results: "Results & Lessons",
+        links: "Project Links",
+      },
+    },
   },
 
   ru: {
@@ -394,6 +411,23 @@ export const translations = {
     footer: {
       privacy: "Приватность",
       cookieSettings: "Настройки cookie",
+    },
+
+    caseStudy: {
+      eyebrow: "История проекта",
+      backToProjects: "Вернуться к проектам",
+      stackTitle: "Технологии проекта",
+      cta: "Подробнее",
+
+      sections: {
+        role: "Моя роль и вклад",
+        challenge: "Задача",
+        solution: "Решение",
+        architecture: "Архитектура и технические решения",
+        gallery: "Галерея",
+        results: "Результаты и выводы",
+        links: "Ссылки на проект",
+      },
     },
   },
 };

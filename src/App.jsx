@@ -1,8 +1,10 @@
+
 import { Route, Routes } from "react-router-dom";
 
 import SiteLayout from "./layouts/SiteLayout";
 import HomePage from "./pages/HomePage";
 import NotPoundPage from "./pages/NotFoundPage";
+import CaseStudyPage from "./pages/CaseStudyPage";
 import { routePaths } from "./router/routeConfig";
 import PrivacyPage from "./pages/PrivacyPage";
 import AnalyticsManager from "./analytics/AnalyticsManager";
@@ -14,11 +16,25 @@ function App() {
 
       <Routes>
         <Route element={<SiteLayout />}>
-          <Route path={routePaths.home} element={<HomePage />} />
+          <Route
+            path={routePaths.home}
+            element={<HomePage />}
+          />
 
-          <Route path={routePaths.privacy} element={<PrivacyPage />} />
+          <Route
+            path={routePaths.privacy}
+            element={<PrivacyPage />}
+          />
 
-          <Route path="*" element={<NotPoundPage />} />
+          <Route
+            path={routePaths.project(":slug")}
+            element={<CaseStudyPage />}
+          />
+
+          <Route
+            path="*"
+            element={<NotPoundPage />}
+          />
         </Route>
       </Routes>
     </>

@@ -1865,3 +1865,37 @@ a {
     transition: none;
   }
 }
+
+/* Conditional project case-study links */
+
+.featured-project__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.featured-project__actions .project-link {
+  margin-top: 0;
+}
+
+.project-card__footer .project-link {
+  align-self: flex-start;
+  margin-top: 0;
+}
+
+.opensource-card__bottom > .project-link + .project-link {
+  margin-left: 18px;
+}
+
+.project-link:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .featured-project__actions {
+    align-items: flex-start;
+  }
+}

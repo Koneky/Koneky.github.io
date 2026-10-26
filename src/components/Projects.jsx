@@ -5,6 +5,7 @@ import { useLanguage } from "../context/useLanguage";
 
 import { projects } from "../data/projects.js";
 import { getTechnology } from "../data/technologies.js";
+import { routePaths } from "../router/routeConfig.js";
 
 import {
   getTechnologyFilter,
@@ -28,6 +29,22 @@ function ProjectStack({ technologies }) {
         );
       })}
     </div>
+  );
+}
+
+function ProjectCaseStudyLink({ project, label }) {
+  if (!project.caseStudySlug) {
+    return null;
+  }
+
+  return (
+    <Link
+      to={routePaths.project(project.caseStudySlug)}
+      className="project-link"
+    >
+      {label}
+      <span aria-hidden="true">↗</span>
+    </Link>
   );
 }
 
@@ -159,15 +176,26 @@ function Projects() {
                   }
                 </p>
               </div>
-
               <div className="featured-project__footer">
                 <ProjectStack
                   technologies={featured.technologies}
                 />
 
-                <span className="project-private">
-                  {t.projects.privateRepository}
-                </span>
+                <div className="featured-project__actions">
+                  <span className="project-private">
+                    {t.projects.privateRepository}
+                  </span>
+
+                  <ProjectCaseStudyLink
+                    project={featured}
+                    label={t.caseStudy.cta}
+                  />
+
+                  <ProjectCaseStudyLink
+                    project={featured}
+                    label={t.caseStudy.cta}
+                  />
+                </div>
               </div>
             </div>
           </article>
@@ -290,6 +318,10 @@ function Projects() {
                       {t.projects.viewGithub}
                       <span>↗</span>
                     </a>
+                    <ProjectCaseStudyLink
+                      project={project}
+                      label={t.caseStudy.cta}
+                    />
                   </div>
                 </article>
               ))}
