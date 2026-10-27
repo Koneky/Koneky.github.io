@@ -3,7 +3,7 @@ export const staticRoutes = [
     path: "/privacy",
     title: "Privacy | Qarumi",
     description:
-      "Privacy information and analytics preferences for thr Qarumi portfolio.",
+      "Privacy information and analytics preferences for the Qarumi portfolio.",
     robots: "index,follow",
   },
   {
