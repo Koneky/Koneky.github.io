@@ -1,4 +1,3 @@
-
 import test from "node:test";
 import assert from "node:assert/strict";
 
@@ -9,6 +8,10 @@ import {
 import {
   executeCommand,
 } from "../src/commands/executeCommand.js";
+
+import { commands } from "../src/data/commands.js";
+import { routePaths } from "../src/router/routeConfig.js";
+import { translations } from "../src/i18n/translations.js";
 
 function createCommand(
   id,
@@ -183,4 +186,24 @@ test("unknown actions throw a controlled error", () => {
   );
 
   assert.equal(arbitraryActionCalled, false);
+});
+
+test("QRumiX command navigates to the case-study page", () => {
+  const matches = commands.filter((command) => command.id === "qrumix");
+
+  assert.equal(matches.length, 1, "Exactly one QRumiX command is required");
+
+  const [command] = matches;
+
+  assert.equal(command.visibility, "public");
+  assert.equal(command.action.type, "navigate");
+
+  assert.equal(command.action.to, routePaths.project("qrumix"));
+
+  for (const language of ["en", "ru"]) {
+    const label = translations[language].commandPalette.commands.qrumix;
+
+    assert.equal(typeof label, "string");
+    assert.ok(label.trim().length > 0);
+  }
 });

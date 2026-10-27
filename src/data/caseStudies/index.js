@@ -1,9 +1,9 @@
-
 import { getTechnology } from "../technologies.js";
+import { qrumixCaseStudy } from "./qrumix.js";
 
 // Real case studies will be registered here.
 // Task 11 intentionally starts with an empty registry.
-export const caseStudies = [];
+export const caseStudies = [qrumixCaseStudy];
 
 export function validateCaseStudies(studies) {
   const slugs = new Set();

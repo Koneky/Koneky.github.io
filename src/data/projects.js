@@ -13,6 +13,7 @@ export const projects = [
     ],
     repository: null,
     isPrivate: true,
+    caseStudySlug: "qrumix",
   },
 
   {

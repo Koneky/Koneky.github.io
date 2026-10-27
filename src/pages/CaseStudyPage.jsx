@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 
 import { useLanguage } from "../context/useLanguage.js";
@@ -6,8 +5,15 @@ import {
   getCaseStudyBySlug,
 } from "../data/caseStudies/index.js";
 
+import { useEffect, useRef } from "react";
+import { useConsent } from "../context/useConsent.js";
+import {
+  trackCaseStudyOpen,
+} from "../analytics/caseStudyTracking.js";
+
 import CaseStudyHero from "../components/case-study/CaseStudyHero.jsx";
 import CaseStudySection from "../components/case-study/CaseStudySection.jsx";
+import CaseStudyGallery from "../components/case-study/CaseStudyGallery.jsx";
 import NotFoundPage from "./NotFoundPage.jsx";
 
 import "./caseStudy.css";
@@ -35,9 +41,34 @@ function getLocalizedText(value, language) {
 
 export default function CaseStudyPage() {
   const { slug } = useParams();
+
   const { language, t } = useLanguage();
+  const { consent } = useConsent();
+
+  const trackedSlugRef = useRef(null);
 
   const study = getCaseStudyBySlug(slug);
+
+  useEffect(() => {
+    if (!study) {
+      return;
+    }
+
+    if (consent?.analytics !== true) {
+      return;
+    }
+
+    // Avoid duplicate events in React StrictMode.
+    if (trackedSlugRef.current === slug) {
+      return;
+    }
+
+    const tracked = trackCaseStudyOpen(slug);
+
+    if (tracked) {
+      trackedSlugRef.current = slug;
+    }
+  }, [slug, study, consent?.analytics]);
 
   if (!study) {
     return <NotFoundPage />;
@@ -94,27 +125,11 @@ export default function CaseStudyPage() {
             )}
 
             {gallery.length > 0 && (
-              <CaseStudySection
-                title={labels.sections.gallery}
-              >
-                <div className="case-study-gallery">
-                  {gallery.map((image) => (
-                    <figure
-                      className="case-study-gallery__item"
-                      key={image.src}
-                    >
-                      <img
-                        className="case-study-gallery__image"
-                        src={image.src}
-                        alt={getLocalizedText(
-                          image.alt,
-                          language,
-                        )}
-                        loading="lazy"
-                      />
-                    </figure>
-                  ))}
-                </div>
+              <CaseStudySection title={labels.sections.gallery}>
+                <CaseStudyGallery
+                  images={gallery}
+                  language={language}
+                />
               </CaseStudySection>
             )}
 

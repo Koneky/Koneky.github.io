@@ -2,7 +2,15 @@ export const staticRoutes = [
   {
     path: "/privacy",
     title: "Privacy | Qarumi",
-    description: "Privacy information and analytics preferences for thr Qarumi portfolio.",
+    description:
+      "Privacy information and analytics preferences for thr Qarumi portfolio.",
+    robots: "index,follow",
+  },
+  {
+    path: "/projects/qrumix",
+    title: "QRumiX — Flutter Android Case Study | Qarumi",
+    description:
+      "QRumiX is an independent Flutter Android project in alpha development, featuring QR-code generation, local data storage, and a GitHub-based update system.",
     robots: "index,follow",
   },
 ];

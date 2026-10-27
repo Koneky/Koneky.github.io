@@ -1,6 +1,6 @@
-
 import { getSocialLinksFor } from "./socialLinks.js";
 import { getHomeSectionTarget } from "../utils/navigation.js";
+import { routePaths } from "../router/routeConfig.js";
 
 const githubLink = getSocialLinksFor("commands").find(
   (link) => link.id === "github",
@@ -48,6 +48,25 @@ export const commands = [
     action: {
       type: "navigate",
       to: getHomeSectionTarget("contact"),
+    },
+    visibility: "public",
+  },
+  {
+    id: "qrumix",
+    labelKey: "commands.qrumix",
+    keywords: [
+      "qrumix",
+      "qr code",
+      "qr codes",
+      "flutter",
+      "case study",
+      "кейс",
+      "история проекта",
+      "проект qrumix"
+    ],
+    action: {
+      type: "navigate",
+      to: routePaths.project("qrumix"),
     },
     visibility: "public",
   },

@@ -190,11 +190,6 @@ function Projects() {
                     project={featured}
                     label={t.caseStudy.cta}
                   />
-
-                  <ProjectCaseStudyLink
-                    project={featured}
-                    label={t.caseStudy.cta}
-                  />
                 </div>
               </div>
             </div>

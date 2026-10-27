@@ -38,3 +38,21 @@ test("static route registry rejects duplicate paths", () => {
 
   assert.throws(() => validateStaticRoutes(routes), /duplicate/i);
 });
+
+test("QRumiX case study has a public static route", () => {
+  const route = staticRoutes.find((item) => item.path === "/projects/qrumix");
+
+  assert.ok(route, "QRumiX must have a static route");
+
+  assert.equal(route.robots, "index,follow");
+
+  assert.equal(typeof route.title, "string");
+  assert.match(route.title, /qrumix/i);
+
+  assert.equal(typeof route.description, "string");
+  assert.ok(route.description.trim().length > 0);
+
+  assert.doesNotThrow(() => {
+    validateStaticRoutes(staticRoutes);
+  });
+});
